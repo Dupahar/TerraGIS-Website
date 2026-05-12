@@ -85,7 +85,7 @@ export const metadata: Metadata = {
     url: "https://terragis.co.in/",
     images: [
       {
-        url: "/screenshot-1.png",
+        url: "/dupahar-logo.png",
         width: 1200,
         height: 630,
         alt: "TerraGIS Software Interface",
@@ -97,7 +97,7 @@ export const metadata: Metadata = {
     title: "TerraGIS | Dupahar",
     description:
       "Modern desktop GIS application for professional spatial workflows. Vector & raster editing, spatial analysis, AI-assisted mapping.",
-    images: ["/screenshot-1.png"],
+    images: ["/dupahar-logo.png"],
   },
   alternates: {
     canonical: "https://terragis.co.in/",
