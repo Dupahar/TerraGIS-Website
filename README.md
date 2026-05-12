@@ -5,7 +5,7 @@
   
   **Professional Desktop GIS Software for Windows by Dupahar**
 
-  <h3>🌐 <a href="https://terragis.co.in/">Live Website: terragis.co.in</a></h3>
+  [![Live Website](https://img.shields.io/badge/Live_Website-terragis.co.in-2563EB?style=for-the-badge&logo=google-earth&logoColor=white)](https://terragis.co.in/)
 
   [![Next.js](https://img.shields.io/badge/Next.js-15.0-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
   [![React](https://img.shields.io/badge/React-19.0-blue?style=for-the-badge&logo=react)](https://react.dev/)
