@@ -21,6 +21,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://terragis.co.in"),
   title: "TerraGIS | Dupahar",
   description:
     "TerraGIS is a modern desktop GIS application for professional spatial workflows on Windows. Load Shapefiles, GeoTIFF, GeoPackage — edit vectors, run spatial analysis, digitize features, and export publication-ready maps. Built for land surveyors, EIA consultants, drone survey teams, and GIS professionals in India.",
@@ -60,7 +61,7 @@ export const metadata: Metadata = {
     "GIS for consultants",
     "Windows mapping software",
   ],
-  authors: [{ name: "Dupahar", url: "https://github.com/Dupahar" }],
+  authors: [{ name: "Dupahar", url: "https://dupahar.com" }],
   creator: "Dupahar",
   publisher: "Dupahar",
   robots: {
@@ -75,22 +76,31 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "TerraGIS — Professional Desktop GIS for Windows",
+    title: "TerraGIS | Dupahar",
     description:
       "Modern desktop GIS application for professional spatial workflows. Vector & raster editing, spatial analysis, AI-assisted mapping, and publication-ready exports. Starting at ₹249.",
     type: "website",
     locale: "en_IN",
     siteName: "TerraGIS by Dupahar",
-    url: "https://dupahar.github.io/TerraGIS/",
+    url: "https://terragis.co.in/",
+    images: [
+      {
+        url: "/screenshot-1.png",
+        width: 1200,
+        height: 630,
+        alt: "TerraGIS Software Interface",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "TerraGIS — Professional Desktop GIS for Windows",
+    title: "TerraGIS | Dupahar",
     description:
       "Modern desktop GIS application for professional spatial workflows. Vector & raster editing, spatial analysis, AI-assisted mapping.",
+    images: ["/screenshot-1.png"],
   },
   alternates: {
-    canonical: "https://dupahar.github.io/TerraGIS/",
+    canonical: "https://terragis.co.in/",
   },
   category: "Software",
 };
