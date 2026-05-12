@@ -301,7 +301,7 @@ export default function ProductShowcase() {
         </motion.div>
 
         {/* Step Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-[900px] mx-auto">
+        <div className="responsive-grid-3" style={{ maxWidth: '900px', margin: '0 auto' }}>
           {steps.map((step, i) => (
             <motion.div
               key={step.number}

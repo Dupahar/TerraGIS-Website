@@ -33,7 +33,7 @@ export default function TerraAI() {
       />
 
       <div className="container-main">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 items-center">
+        <div className="responsive-grid-2" style={{ alignItems: 'center' }}>
           {/* Left — Content */}
           <div>
             <motion.div

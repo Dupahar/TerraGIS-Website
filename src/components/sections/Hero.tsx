@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, Suspense } from 'react';
+import { Suspense } from 'react';
 import { motion } from 'framer-motion';
 import { Download, Monitor, HardDrive, Zap } from 'lucide-react';
 import dynamic from 'next/dynamic';
@@ -46,6 +46,7 @@ export default function Hero() {
         position: 'relative',
         overflow: 'hidden',
         paddingTop: '100px',
+        paddingBottom: '40px',
       }}
     >
       {/* Background coordinate grid */}
@@ -73,150 +74,166 @@ export default function Hero() {
         }}
       />
 
-      <div className="container-main grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center w-full">
+      <div className="container-main responsive-grid-2" style={{ width: '100%', alignItems: 'center' }}>
         {/* Left — Content */}
-        <div style={{ maxWidth: '600px' }}>
-          {/* Eyebrow */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            <span
-              style={{
-                fontFamily: 'var(--font-jetbrains)',
-                fontSize: '13px',
-                fontWeight: 600,
-                color: 'var(--cyan)',
-                textTransform: 'uppercase',
-                letterSpacing: '0.15em',
-              }}
+        <div style={{ maxWidth: '600px', margin: '0 auto', textAlign: 'center' }}>
+          <style>{`
+            @media (min-width: 768px) {
+              .hero-content { text-align: left !important; margin: 0 !important; }
+              .hero-cta { justify-content: flex-start !important; }
+              .hero-stats { justify-content: flex-start !important; }
+              .hero-body { margin-left: 0 !important; margin-right: 0 !important; }
+            }
+          `}</style>
+          <div className="hero-content" style={{ textAlign: 'center' }}>
+            {/* Eyebrow */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
             >
-              Professional GIS for Windows
-            </span>
-          </motion.div>
-
-          {/* Headline */}
-          <div style={{ marginTop: '24px', marginBottom: '24px' }}>
-            {heroWords.map((word, i) => (
-              <motion.div
-                key={word}
-                initial={{ opacity: 0, y: 40 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{
-                  duration: 0.7,
-                  delay: 0.4 + i * 0.12,
-                  ease: [0.16, 1, 0.3, 1],
+              <span
+                style={{
+                  fontFamily: 'var(--font-jetbrains)',
+                  fontSize: '13px',
+                  fontWeight: 600,
+                  color: 'var(--cyan)',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.15em',
                 }}
               >
-                <span
-                  style={{
-                    fontFamily: 'var(--font-space-grotesk)',
-                    fontSize: 'clamp(48px, 6vw, 72px)',
-                    fontWeight: i === 0 ? 300 : i === 1 ? 500 : 700,
-                    lineHeight: 1.05,
-                    letterSpacing: '-0.03em',
-                    color: 'var(--text-primary)',
-                    display: 'block',
+                Professional GIS for Windows
+              </span>
+            </motion.div>
+
+            {/* Headline */}
+            <div style={{ marginTop: '24px', marginBottom: '24px' }}>
+              {heroWords.map((word, i) => (
+                <motion.div
+                  key={word}
+                  initial={{ opacity: 0, y: 40 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{
+                    duration: 0.7,
+                    delay: 0.4 + i * 0.12,
+                    ease: [0.16, 1, 0.3, 1],
                   }}
                 >
-                  {word}
-                </span>
-              </motion.div>
-            ))}
-          </div>
-
-          {/* Body */}
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.8 }}
-            style={{
-              fontFamily: 'var(--font-inter)',
-              fontSize: '18px',
-              lineHeight: 1.6,
-              color: 'var(--text-secondary)',
-              maxWidth: '480px',
-              marginBottom: '32px',
-            }}
-          >
-            TerraGIS is a modern desktop GIS application for professional
-            spatial workflows on Windows. Designed for teams who need practical
-            mapping and analysis tools without heavy infrastructure.
-          </motion.p>
-
-          {/* CTAs */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 1.0 }}
-            style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}
-          >
-            <a
-              href="https://apps.microsoft.com/detail/9P1ZS0X4NF5Q"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-primary"
-            >
-              <Download size={18} />
-              Download
-            </a>
-          </motion.div>
-
-          {/* Stats */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 1.2 }}
-            style={{
-              display: 'flex',
-              gap: '32px',
-              marginTop: '48px',
-              flexWrap: 'wrap',
-            }}
-          >
-            {stats.map((stat) => (
-              <div
-                key={stat.label}
-                style={{ display: 'flex', alignItems: 'center', gap: '10px' }}
-              >
-                <div
-                  style={{
-                    width: '36px',
-                    height: '36px',
-                    borderRadius: '10px',
-                    background: 'rgba(0, 212, 255, 0.1)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    color: 'var(--cyan)',
-                  }}
-                >
-                  {stat.icon}
-                </div>
-                <div>
-                  <div
+                  <span
                     style={{
-                      fontFamily: 'var(--font-jetbrains)',
-                      fontSize: '14px',
-                      fontWeight: 600,
+                      fontFamily: 'var(--font-space-grotesk)',
+                      fontSize: 'clamp(40px, 6vw, 72px)',
+                      fontWeight: i === 0 ? 300 : i === 1 ? 500 : 700,
+                      lineHeight: 1.05,
+                      letterSpacing: '-0.03em',
                       color: 'var(--text-primary)',
+                      display: 'block',
                     }}
                   >
-                    {stat.label}
-                  </div>
+                    {word}
+                  </span>
+                </motion.div>
+              ))}
+            </div>
+
+            {/* Body */}
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.8 }}
+              className="hero-body"
+              style={{
+                fontFamily: 'var(--font-inter)',
+                fontSize: 'clamp(15px, 2vw, 18px)',
+                lineHeight: 1.6,
+                color: 'var(--text-secondary)',
+                maxWidth: '480px',
+                marginBottom: '32px',
+                marginLeft: 'auto',
+                marginRight: 'auto',
+              }}
+            >
+              TerraGIS is a modern desktop GIS application for professional
+              spatial workflows on Windows. Designed for teams who need practical
+              mapping and analysis tools without heavy infrastructure.
+            </motion.p>
+
+            {/* CTAs */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 1.0 }}
+              className="hero-cta"
+              style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', justifyContent: 'center' }}
+            >
+              <a
+                href="https://apps.microsoft.com/detail/9P1ZS0X4NF5Q"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary"
+              >
+                <Download size={18} />
+                Download
+              </a>
+            </motion.div>
+
+            {/* Stats */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 1.2 }}
+              className="hero-stats"
+              style={{
+                display: 'flex',
+                gap: '24px',
+                marginTop: '48px',
+                flexWrap: 'wrap',
+                justifyContent: 'center',
+              }}
+            >
+              {stats.map((stat) => (
+                <div
+                  key={stat.label}
+                  style={{ display: 'flex', alignItems: 'center', gap: '10px' }}
+                >
                   <div
                     style={{
-                      fontSize: '12px',
-                      color: 'var(--text-secondary)',
+                      width: '36px',
+                      height: '36px',
+                      borderRadius: '10px',
+                      background: 'rgba(0, 212, 255, 0.1)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      color: 'var(--cyan)',
                     }}
                   >
-                    {stat.sub}
+                    {stat.icon}
+                  </div>
+                  <div>
+                    <div
+                      style={{
+                        fontFamily: 'var(--font-jetbrains)',
+                        fontSize: '14px',
+                        fontWeight: 600,
+                        color: 'var(--text-primary)',
+                      }}
+                    >
+                      {stat.label}
+                    </div>
+                    <div
+                      style={{
+                        fontSize: '12px',
+                        color: 'var(--text-secondary)',
+                      }}
+                    >
+                      {stat.sub}
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
-          </motion.div>
+              ))}
+            </motion.div>
+          </div>
         </div>
 
         {/* Right — 3D Globe */}
@@ -264,7 +281,7 @@ export default function Hero() {
               letterSpacing: '0.05em',
             }}
           >
-            28.6°N 77.2°E • DELHI
+            32.7°N 74.9°E • JAMMU
           </div>
           <div
             style={{
@@ -281,8 +298,6 @@ export default function Hero() {
           </div>
         </motion.div>
       </div>
-
-
     </section>
   );
 }
