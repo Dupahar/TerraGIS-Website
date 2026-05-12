@@ -1,26 +1,310 @@
 @import "tailwindcss";
 
+/* ===== TerraGIS Design System — Global Styles ===== */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Core palette */
+  --bg: #040810;
+  --surface: #0A1628;
+  --surface-elevated: #0D2040;
+  --surface-bright: #112B4A;
+  
+  /* Accent */
+  --cyan: #00D4FF;
+  --cyan-dim: #3cd7ff;
+  --cyan-light: #a8e8ff;
+  --green: #22C55E;
+  --amber: #F59E0B;
+  
+  /* Text */
+  --text-primary: #F0F4FF;
+  --text-secondary: #7B9EC8;
+  
+  /* Borders & Grid */
+  --border-glass: rgba(240, 244, 255, 0.1);
+  --grid-lines: #0D2040;
+  
+  /* Glows */
+  --glow-cyan: rgba(0, 212, 255, 0.15);
+  --glow-cyan-strong: rgba(0, 212, 255, 0.3);
+  --glow-amber: rgba(245, 158, 11, 0.3);
+  --glow-green: rgba(34, 197, 94, 0.2);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* Reset */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  background: var(--bg);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* ===== Scrollbar ===== */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--surface-elevated);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--cyan);
+}
+
+/* ===== Selection ===== */
+::selection {
+  background: rgba(0, 212, 255, 0.3);
+  color: var(--text-primary);
+}
+
+/* ===== Coordinate Grid Background ===== */
+.coord-grid {
+  background-image:
+    linear-gradient(var(--grid-lines) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-lines) 1px, transparent 1px);
+  background-size: 60px 60px;
+  background-position: center;
+}
+
+/* ===== Glassmorphism ===== */
+.glass {
+  background: rgba(10, 22, 40, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-glass);
+}
+
+.glass-card {
+  background: rgba(10, 22, 40, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--border-glass);
+  border-radius: 16px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+  border-color: rgba(0, 212, 255, 0.25);
+  box-shadow: 0 0 30px var(--glow-cyan), inset 0 0 30px rgba(0, 212, 255, 0.03);
+  transform: translateY(-2px);
+}
+
+/* ===== Buttons ===== */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  background: var(--cyan);
+  color: var(--bg);
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  font-family: var(--font-inter), system-ui, sans-serif;
+}
+.btn-primary:hover {
+  box-shadow: 0 0 30px var(--glow-cyan-strong), 0 0 60px var(--glow-cyan);
+  transform: scale(1.02) translateY(-1px);
+}
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  background: transparent;
+  color: var(--cyan);
+  border: 1px solid var(--cyan);
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  font-family: var(--font-inter), system-ui, sans-serif;
+}
+.btn-ghost:hover {
+  background: rgba(0, 212, 255, 0.1);
+  box-shadow: 0 0 20px var(--glow-cyan);
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  background: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--text-secondary);
+  border-radius: 12px;
+  font-weight: 500;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  font-family: var(--font-inter), system-ui, sans-serif;
+}
+.btn-outline:hover {
+  border-color: var(--cyan);
+  color: var(--cyan);
+}
+
+/* ===== Badge ===== */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  background: rgba(0, 212, 255, 0.1);
+  color: var(--cyan);
+  border-radius: 6px;
+  font-family: var(--font-jetbrains), monospace;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.badge-amber {
+  background: rgba(245, 158, 11, 0.1);
+  color: var(--amber);
+}
+
+.badge-green {
+  background: rgba(34, 197, 94, 0.1);
+  color: var(--green);
+}
+
+/* ===== Feature Strip ===== */
+.feature-strip {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.feature-strip-inner {
+  display: inline-flex;
+  gap: 32px;
+  animation: scroll-left 30s linear infinite;
+}
+
+.feature-strip:hover .feature-strip-inner {
+  animation-play-state: paused;
+}
+
+@keyframes scroll-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ===== Section Divider — Topographic Contour ===== */
+.topo-divider {
+  width: 100%;
+  height: 80px;
+  opacity: 0.3;
+}
+
+/* ===== Gradient Text ===== */
+.gradient-text {
+  background: linear-gradient(135deg, var(--cyan) 0%, var(--text-primary) 60%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-text-amber {
+  background: linear-gradient(135deg, var(--amber) 0%, #FBBF24 60%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ===== Bento Grid ===== */
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+@media (max-width: 1024px) {
+  .bento-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+  .bento-grid { grid-template-columns: 1fr; }
+}
+
+.bento-large {
+  grid-column: span 2;
+}
+
+/* ===== Rotating Border (for pricing card) ===== */
+.rotating-border {
+  position: relative;
+  overflow: hidden;
+}
+.rotating-border::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: conic-gradient(from var(--border-angle, 0deg), 
+    var(--cyan), transparent 30%, transparent 70%, var(--cyan));
+  border-radius: inherit;
+  z-index: -1;
+  animation: rotate-border 4s linear infinite;
+}
+@keyframes rotate-border {
+  to { --border-angle: 360deg; }
+}
+@property --border-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+/* ===== Pulse Animation ===== */
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+/* ===== Max Width Container ===== */
+.container-main {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+@media (max-width: 768px) {
+  .container-main { padding: 0 20px; }
+}
+
+/* ===== Section padding ===== */
+.section-pad {
+  padding: 120px 0;
+}
+@media (max-width: 768px) {
+  .section-pad { padding: 80px 0; }
 }
