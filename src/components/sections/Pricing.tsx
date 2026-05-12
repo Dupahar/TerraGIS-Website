@@ -96,15 +96,7 @@ export default function Pricing() {
         </motion.div>
 
         {/* Pricing Cards */}
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(3, 1fr)',
-            gap: '24px',
-            maxWidth: '1100px',
-            margin: '0 auto',
-          }}
-        >
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-[1100px] mx-auto">
           {plans.map((plan, i) => (
             <motion.div
               key={plan.name}
@@ -275,14 +267,7 @@ export default function Pricing() {
         </div>
       </div>
 
-      <style jsx>{`
-        @media (max-width: 1024px) {
-          div[style*="grid-template-columns: repeat(3"] {
-            grid-template-columns: 1fr !important;
-            max-width: 440px !important;
-          }
-        }
-      `}</style>
+
     </section>
   );
 }

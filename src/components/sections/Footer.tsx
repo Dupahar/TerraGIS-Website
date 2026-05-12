@@ -53,16 +53,9 @@ export default function Footer() {
       }}
     >
       <div className="container-main">
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: '2fr 1fr 1fr 1fr',
-            gap: '48px',
-            marginBottom: '64px',
-          }}
-        >
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8 mb-16">
           {/* Brand */}
-          <div>
+          <div className="lg:col-span-2">
             <div
               style={{
                 display: 'flex',
@@ -297,19 +290,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <style jsx>{`
-        @media (max-width: 768px) {
-          footer > div > div:first-child {
-            grid-template-columns: 1fr 1fr !important;
-            gap: 32px !important;
-          }
-        }
-        @media (max-width: 480px) {
-          footer > div > div:first-child {
-            grid-template-columns: 1fr !important;
-          }
-        }
-      `}</style>
+
     </footer>
   );
 }

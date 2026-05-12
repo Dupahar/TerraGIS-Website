@@ -73,16 +73,7 @@ export default function Hero() {
         }}
       />
 
-      <div
-        className="container-main"
-        style={{
-          display: 'grid',
-          gridTemplateColumns: '1fr 1fr',
-          gap: '64px',
-          alignItems: 'center',
-          width: '100%',
-        }}
-      >
+      <div className="container-main grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center w-full">
         {/* Left — Content */}
         <div style={{ maxWidth: '600px' }}>
           {/* Eyebrow */}
@@ -291,13 +282,7 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      <style jsx>{`
-        @media (max-width: 1024px) {
-          section > div:last-child {
-            grid-template-columns: 1fr !important;
-          }
-        }
-      `}</style>
+
     </section>
   );
 }

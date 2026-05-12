@@ -33,14 +33,7 @@ export default function TerraAI() {
       />
 
       <div className="container-main">
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: '1fr 1fr',
-            gap: '80px',
-            alignItems: 'center',
-          }}
-        >
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center">
           {/* Left — Content */}
           <div>
             <motion.div
@@ -330,11 +323,6 @@ export default function TerraAI() {
         }
         @keyframes drawSegment5 {
           to { stroke-dashoffset: 0; }
-        }
-        @media (max-width: 1024px) {
-          #terrai-grid {
-            grid-template-columns: 1fr !important;
-          }
         }
       `}</style>
     </section>

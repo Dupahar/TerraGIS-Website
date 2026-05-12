@@ -111,12 +111,7 @@ export default function Nav() {
 
         {/* Desktop Nav Links */}
         <div
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: '32px',
-          }}
-          className="nav-desktop"
+          className="nav-desktop hidden md:flex"
         >
           {navLinks.map((link) => (
             <a
@@ -146,7 +141,7 @@ export default function Nav() {
         {/* CTA */}
         <a
           href="#download"
-          className="btn-primary nav-cta"
+          className="btn-primary nav-cta hidden md:inline-flex"
           style={{
             padding: '10px 20px',
             fontSize: '14px',
@@ -158,10 +153,9 @@ export default function Nav() {
 
         {/* Mobile hamburger */}
         <button
-          className="nav-mobile-btn"
+          className="nav-mobile-btn md:hidden flex"
           onClick={() => setMobileOpen(!mobileOpen)}
           style={{
-            display: 'none',
             background: 'none',
             border: 'none',
             color: 'var(--text-primary)',
@@ -225,19 +219,7 @@ export default function Nav() {
         )}
       </AnimatePresence>
 
-      <style jsx global>{`
-        @media (max-width: 768px) {
-          .nav-desktop {
-            display: none !important;
-          }
-          .nav-cta {
-            display: none !important;
-          }
-          .nav-mobile-btn {
-            display: flex !important;
-          }
-        }
-      `}</style>
+
     </>
   );
 }

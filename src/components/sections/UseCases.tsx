@@ -146,13 +146,9 @@ export default function UseCases() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
-            className="glass-card"
+            className="glass-card grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center"
             style={{
-              padding: '48px',
-              display: 'grid',
-              gridTemplateColumns: '1fr 1fr',
-              gap: '48px',
-              alignItems: 'center',
+              padding: 'clamp(24px, 5vw, 48px)',
               borderColor: `${useCases[active].accent}22`,
             }}
           >
@@ -252,13 +248,7 @@ export default function UseCases() {
         </AnimatePresence>
       </div>
 
-      <style jsx>{`
-        @media (max-width: 768px) {
-          .glass-card {
-            grid-template-columns: 1fr !important;
-          }
-        }
-      `}</style>
+
     </section>
   );
 }

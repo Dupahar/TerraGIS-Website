@@ -69,15 +69,7 @@ export default function Contact() {
         </motion.div>
 
         {/* Contact Cards */}
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(3, 1fr)',
-            gap: '24px',
-            maxWidth: '900px',
-            margin: '0 auto',
-          }}
-        >
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-[900px] mx-auto">
           {contactMethods.map((method, i) => (
             <motion.div
               key={method.label}
@@ -177,14 +169,7 @@ export default function Contact() {
         </motion.div>
       </div>
 
-      <style jsx>{`
-        @media (max-width: 768px) {
-          div[style*="grid-template-columns: repeat(3"] {
-            grid-template-columns: 1fr !important;
-            max-width: 400px !important;
-          }
-        }
-      `}</style>
+
     </section>
   );
 }
