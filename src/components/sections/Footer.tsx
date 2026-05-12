@@ -53,9 +53,9 @@ export default function Footer() {
       }}
     >
       <div className="container-main">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 lg:gap-10 mb-16">
           {/* Brand */}
-          <div className="lg:col-span-2">
+          <div className="sm:col-span-2 md:col-span-4 lg:col-span-2">
             <div
               style={{
                 display: 'flex',

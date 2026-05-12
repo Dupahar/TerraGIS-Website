@@ -111,7 +111,7 @@ export default function Nav() {
 
         {/* Desktop Nav Links */}
         <div
-          className="nav-desktop hidden md:flex"
+          className="hidden md:flex items-center gap-6"
         >
           {navLinks.map((link) => (
             <a

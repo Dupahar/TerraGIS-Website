@@ -73,7 +73,7 @@ export default function Hero() {
         }}
       />
 
-      <div className="container-main grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center w-full">
+      <div className="container-main grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center w-full">
         {/* Left — Content */}
         <div style={{ maxWidth: '600px' }}>
           {/* Eyebrow */}

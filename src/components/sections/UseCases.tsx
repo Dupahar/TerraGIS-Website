@@ -146,7 +146,7 @@ export default function UseCases() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
-            className="glass-card grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center"
+            className="glass-card grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center"
             style={{
               padding: 'clamp(24px, 5vw, 48px)',
               borderColor: `${useCases[active].accent}22`,

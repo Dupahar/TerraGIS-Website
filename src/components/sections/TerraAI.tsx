@@ -33,7 +33,7 @@ export default function TerraAI() {
       />
 
       <div className="container-main">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 items-center">
           {/* Left — Content */}
           <div>
             <motion.div
