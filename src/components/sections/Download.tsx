@@ -2,7 +2,32 @@
 
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { Download } from 'lucide-react';
+
+/* ── Subtle, elegant keyframes ── */
+const animationStyles = `
+@keyframes dl-breathe {
+  0%, 100% { opacity: 0.04; transform: translate(-50%, -50%) scale(1); }
+  50% { opacity: 0.09; transform: translate(-50%, -50%) scale(1.03); }
+}
+@keyframes dl-expand {
+  0% { transform: translate(-50%, -50%) scale(0.4); opacity: 0.12; }
+  100% { transform: translate(-50%, -50%) scale(1); opacity: 0; }
+}
+@keyframes dl-drift {
+  0%, 100% { transform: translateY(0); opacity: 0.15; }
+  50% { transform: translateY(-18px); opacity: 0.35; }
+}
+`;
+
+/* Just 6 motes — sparse and delicate */
+const motes = [
+  { left: '18%', top: '25%', size: 2, delay: 0, dur: 8 },
+  { left: '78%', top: '30%', size: 2.5, delay: 2, dur: 10 },
+  { left: '30%', top: '72%', size: 2, delay: 4, dur: 9 },
+  { left: '72%', top: '68%', size: 1.5, delay: 1, dur: 11 },
+  { left: '50%', top: '18%', size: 2, delay: 3, dur: 7 },
+  { left: '55%', top: '82%', size: 2, delay: 5, dur: 10 },
+];
 
 export default function DownloadCTA() {
   const ref = useRef(null);
@@ -19,38 +44,77 @@ export default function DownloadCTA() {
         overflow: 'hidden',
       }}
     >
+      <style dangerouslySetInnerHTML={{ __html: animationStyles }} />
+
       {/* Background coordinate grid */}
       <div
         className="coord-grid"
         style={{ position: 'absolute', inset: 0, opacity: 0.08 }}
       />
 
-      {/* Topographic contour rings */}
+      {/* ──────── SUBTLE ANIMATED BACKGROUND ──────── */}
+
+      {/* 1. Breathing contour rings — slow, gentle opacity pulse */}
       <svg
         style={{
           position: 'absolute',
           top: '50%',
           left: '50%',
-          transform: 'translate(-50%, -50%)',
-          width: '800px',
-          height: '800px',
-          opacity: 0.05,
+          width: '900px',
+          height: '900px',
+          animation: 'dl-breathe 8s ease-in-out infinite',
+          pointerEvents: 'none',
         }}
-        viewBox="0 0 800 800"
+        viewBox="0 0 900 900"
       >
-        {[100, 150, 200, 260, 330].map((r) => (
+        {[120, 180, 250, 330].map((r) => (
           <circle
             key={r}
-            cx="400"
-            cy="400"
+            cx="450"
+            cy="450"
             r={r}
             fill="none"
             stroke="var(--cyan)"
-            strokeWidth="1"
+            strokeWidth="0.8"
+            strokeDasharray={r > 220 ? '6 8' : 'none'}
           />
         ))}
       </svg>
 
+      {/* 2. Single slow expanding ring — one gentle ripple every 12s */}
+      <div
+        style={{
+          position: 'absolute',
+          top: '50%',
+          left: '50%',
+          width: '700px',
+          height: '700px',
+          borderRadius: '50%',
+          border: '1px solid rgba(0, 212, 255, 0.15)',
+          animation: 'dl-expand 12s ease-out infinite',
+          pointerEvents: 'none',
+        }}
+      />
+
+      {/* 3. Sparse floating motes — barely-there ambient motion */}
+      {motes.map((m, i) => (
+        <div
+          key={i}
+          style={{
+            position: 'absolute',
+            left: m.left,
+            top: m.top,
+            width: `${m.size}px`,
+            height: `${m.size}px`,
+            borderRadius: '50%',
+            background: 'rgba(0, 212, 255, 0.5)',
+            animation: `dl-drift ${m.dur}s ${m.delay}s ease-in-out infinite`,
+            pointerEvents: 'none',
+          }}
+        />
+      ))}
+
+      {/* ──────── CONTENT ──────── */}
       <div
         className="container-main"
         style={{ textAlign: 'center', position: 'relative', zIndex: 1 }}
