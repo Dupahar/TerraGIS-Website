@@ -17,23 +17,23 @@ const LinkedinIcon = () => (
 );
 
 const productLinks = [
-  { label: 'Features', href: '#features' },
-  { label: 'Download', href: '#download' },
-  { label: 'Pricing', href: '#pricing' },
-  { label: 'Changelog', href: '#' },
+  { label: 'Features', href: '/#features' },
+  { label: 'Download', href: '/#download' },
+  { label: 'Pricing', href: '/#pricing' },
+  { label: 'Changelog', href: '/changelog' },
 ];
 
 const companyLinks = [
-  { label: 'About', href: '#' },
+  { label: 'About', href: '/about' },
   { label: 'Email Us', href: 'mailto:mahajanadil0220@gmail.com' },
   { label: 'Call: +91 8492989575', href: 'tel:+918492989575' },
   { label: 'Privacy Policy', href: 'https://dupahar.github.io/TerraGIS/' },
 ];
 
 const resourceLinks = [
-  { label: 'Documentation', href: '#' },
-  { label: 'Getting Started', href: '#' },
-  { label: 'Release Notes', href: '#' },
+  { label: 'Documentation', href: '/docs' },
+  { label: 'Getting Started', href: '/docs' },
+  { label: 'Release Notes', href: '/changelog' },
 ];
 
 const socials = [

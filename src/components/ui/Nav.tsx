@@ -6,10 +6,10 @@ import { Menu, X } from 'lucide-react';
 import Image from 'next/image';
 
 const navLinks = [
-  { label: 'Features', href: '#features' },
-  { label: 'Use Cases', href: '#usecases' },
-  { label: 'Pricing', href: '#pricing' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Features', href: '/#features' },
+  { label: 'Use Cases', href: '/#usecases' },
+  { label: 'Pricing', href: '/#pricing' },
+  { label: 'Contact', href: '/#contact' },
 ];
 
 export default function Nav() {
@@ -90,7 +90,7 @@ export default function Nav() {
       >
         {/* Logo */}
         <a
-          href="#hero"
+          href="/"
           style={{
             display: 'flex',
             alignItems: 'center',

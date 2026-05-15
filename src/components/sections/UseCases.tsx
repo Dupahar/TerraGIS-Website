@@ -1,7 +1,8 @@
 'use client';
 
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence, useInView } from 'framer-motion';
+import Image from 'next/image';
 
 const useCases = [
   {
@@ -19,6 +20,7 @@ const useCases = [
     accent: '#22C55E',
     accentBg: 'rgba(34, 197, 94, 0.1)',
     tags: ['Drone Rasters', 'Shapefile Export', 'Cadastral Mapping'],
+    image: '/land_surveyor_ui.png',
   },
   {
     id: 'eia',
@@ -36,6 +38,7 @@ const useCases = [
     accent: '#00D4FF',
     accentBg: 'rgba(0, 212, 255, 0.1)',
     tags: ['Buffer Analysis', 'PDF Reports', 'EIA Mapping'],
+    image: '/eia_consultant_ui.png',
   },
   {
     id: 'hydro',
@@ -52,6 +55,7 @@ const useCases = [
     accent: '#00D4FF',
     accentBg: 'rgba(0, 212, 255, 0.1)',
     tags: ['DEM Analysis', 'Watershed', 'Drainage Networks'],
+    image: '/hydrologist_ui.png',
   },
   {
     id: 'carbon',
@@ -68,13 +72,23 @@ const useCases = [
     accent: '#22C55E',
     accentBg: 'rgba(34, 197, 94, 0.1)',
     tags: ['Land Use', 'Area Calculation', 'GeoPackage'],
+    image: '/carbon_auditor_ui.png',
   },
 ];
 
 export default function UseCases() {
   const [active, setActive] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: '-100px' });
+
+  useEffect(() => {
+    if (isHovered) return;
+    const interval = setInterval(() => {
+      setActive((prev) => (prev + 1) % useCases.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [isHovered]);
 
   return (
     <section id="usecases" className="section-pad" ref={ref}>
@@ -141,113 +155,133 @@ export default function UseCases() {
         </motion.div>
 
         {/* Tab Content */}
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={active}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.3 }}
-            className="glass-card responsive-grid-2"
-            style={{
-              padding: 'clamp(24px, 5vw, 48px)',
-              borderColor: `${useCases[active].accent}22`,
-            }}
-          >
-            {/* Left — Icon & Description */}
-            <div>
+        <div 
+          onMouseEnter={() => setIsHovered(true)} 
+          onMouseLeave={() => setIsHovered(false)}
+          style={{ display: 'grid', gridTemplateAreas: '"stack"' }}
+        >
+          {useCases.map((uc, index) => {
+            const isActive = active === index;
+            return (
               <div
+                key={uc.id}
+                className="glass-card responsive-grid-2"
                 style={{
-                  width: '72px',
-                  height: '72px',
-                  borderRadius: '16px',
-                  background: useCases[active].accentBg,
-                  border: `1px solid ${useCases[active].accent}33`,
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  marginBottom: '24px',
+                  gridArea: 'stack',
+                  padding: 'clamp(24px, 5vw, 48px)',
+                  borderColor: `${uc.accent}22`,
+                  opacity: isActive ? 1 : 0,
+                  visibility: isActive ? 'visible' : 'hidden',
+                  transition: 'opacity 0.4s ease-in-out, visibility 0.4s',
+                  zIndex: isActive ? 10 : 1,
+                  pointerEvents: isActive ? 'auto' : 'none',
                 }}
               >
-                {useCases[active].icon}
-              </div>
-
-              <h3
-                style={{
-                  fontFamily: 'var(--font-space-grotesk)',
-                  fontSize: '32px',
-                  fontWeight: 700,
-                  color: 'var(--text-primary)',
-                  marginBottom: '16px',
-                }}
-              >
-                {useCases[active].title}
-              </h3>
-
-              <p
-                style={{
-                  fontSize: '18px',
-                  lineHeight: 1.7,
-                  color: 'var(--text-secondary)',
-                  marginBottom: '24px',
-                  maxWidth: '440px',
-                }}
-              >
-                {useCases[active].description}
-              </p>
-
-              <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
-                {useCases[active].tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="badge"
+                {/* Left — Icon & Description */}
+                <div>
+                  <div
                     style={{
-                      background: useCases[active].accentBg,
-                      color: useCases[active].accent,
+                      width: '72px',
+                      height: '72px',
+                      borderRadius: '16px',
+                      background: uc.accentBg,
+                      border: `1px solid ${uc.accent}33`,
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      marginBottom: '24px',
                     }}
                   >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </div>
+                    {uc.icon}
+                  </div>
 
-            {/* Right — Visual Mockup */}
-            <div
-              style={{
-                width: '100%',
-                aspectRatio: '4/3',
-                borderRadius: '16px',
-                background: `linear-gradient(135deg, var(--bg), var(--surface))`,
-                border: `1px solid ${useCases[active].accent}22`,
-                position: 'relative',
-                overflow: 'hidden',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-              }}
-            >
-              {/* Subtle coordinate grid */}
-              <div className="coord-grid" style={{ position: 'absolute', inset: 0, opacity: 0.1 }} />
-              <div style={{ fontSize: '80px', opacity: 0.15 }}>
-                {useCases[active].icon}
+                  <h3
+                    style={{
+                      fontFamily: 'var(--font-space-grotesk)',
+                      fontSize: '32px',
+                      fontWeight: 700,
+                      color: 'var(--text-primary)',
+                      marginBottom: '16px',
+                    }}
+                  >
+                    {uc.title}
+                  </h3>
+
+                  <p
+                    style={{
+                      fontSize: '18px',
+                      lineHeight: 1.7,
+                      color: 'var(--text-secondary)',
+                      marginBottom: '24px',
+                      maxWidth: '440px',
+                    }}
+                  >
+                    {uc.description}
+                  </p>
+
+                  <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+                    {uc.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="badge"
+                        style={{
+                          background: uc.accentBg,
+                          color: uc.accent,
+                        }}
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Right — Visual Mockup */}
+                <div
+                  style={{
+                    width: '100%',
+                    aspectRatio: '4/3',
+                    borderRadius: '16px',
+                    background: `linear-gradient(135deg, var(--bg), var(--surface))`,
+                    border: `1px solid ${uc.accent}22`,
+                    position: 'relative',
+                    overflow: 'hidden',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                  }}
+                >
+                  <Image 
+                    src={uc.image}
+                    alt={uc.title}
+                    fill
+                    priority
+                    style={{ objectFit: 'cover' }}
+                  />
+                  <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(10, 22, 40, 0.8), transparent 40%)' }} />
+                  
+                  <div
+                    style={{
+                      position: 'absolute',
+                      bottom: '12px',
+                      right: '12px',
+                      fontFamily: 'var(--font-jetbrains)',
+                      fontSize: '10px',
+                      color: `${uc.accent}cc`,
+                      letterSpacing: '0.05em',
+                      background: 'rgba(4, 8, 16, 0.6)',
+                      padding: '4px 8px',
+                      borderRadius: '6px',
+                      backdropFilter: 'blur(4px)',
+                      border: `1px solid ${uc.accent}33`,
+                    }}
+                  >
+                    {uc.id.toUpperCase()}_WORKFLOW.gis
+                  </div>
+                </div>
               </div>
-              <div
-                style={{
-                  position: 'absolute',
-                  bottom: '12px',
-                  right: '12px',
-                  fontFamily: 'var(--font-jetbrains)',
-                  fontSize: '10px',
-                  color: `${useCases[active].accent}66`,
-                  letterSpacing: '0.05em',
-                }}
-              >
-                {useCases[active].id.toUpperCase()}_WORKFLOW.gis
-              </div>
-            </div>
-          </motion.div>
-        </AnimatePresence>
+            );
+          })}
+        </div>
       </div>
 
 
