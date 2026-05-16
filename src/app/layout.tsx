@@ -78,7 +78,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "TerraGIS | Dupahar",
     description:
-      "Modern desktop GIS application for professional spatial workflows. Vector & raster editing, spatial analysis, AI-assisted mapping, and publication-ready exports. Starting at ₹249.",
+      "Modern desktop GIS application for professional spatial workflows. Vector & raster editing, spatial analysis, AI-assisted mapping, and publication-ready exports. Starting at ₹254.",
     type: "website",
     locale: "en_IN",
     siteName: "TerraGIS by Dupahar",
@@ -124,7 +124,7 @@ const jsonLd = {
         {
           "@type": "Offer",
           "name": "Community",
-          "price": "249",
+          "price": "254",
           "priceCurrency": "INR",
           "description": "One-time purchase for hobbyists. Core vector + raster tools, community support, Shapefile / GeoPackage / GeoJSON.",
           "availability": "https://schema.org/InStock",
@@ -221,7 +221,7 @@ const jsonLd = {
           "name": "How much does TerraGIS cost?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "TerraGIS Community edition starts at ₹249 (approximately $3) as a one-time purchase. Professional edition is ₹40,000/year. Enterprise licensing is available for teams.",
+            "text": "TerraGIS Community edition starts at ₹254 (approximately $3) as a one-time purchase. Professional edition is ₹40,000/year. Enterprise licensing is available for teams.",
           },
         },
         {

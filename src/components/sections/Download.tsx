@@ -145,7 +145,7 @@ export default function DownloadCTA() {
               fontFamily: 'var(--font-inter)',
             }}
           >
-            Starting at ₹249. No account required. 224 MB.
+            Starting at ₹254. No account required. 224 MB.
           </p>
 
           {/* Microsoft Store Button */}

@@ -66,7 +66,7 @@
 - **Current (315 chars):**
   > TerraGIS is a modern desktop GIS application for professional spatial workflows on Windows. Load Shapefiles, GeoTIFF, GeoPackage — edit vectors, run spatial analysis, digitize features, and export publication-ready maps. Built for land surveyors, EIA consultants, drone survey teams, and GIS professionals in India.
 - **Recommended (155 chars):**
-  > TerraGIS — professional desktop GIS for Windows. Load Shapefiles, GeoTIFF, run spatial analysis, and export maps. Starting at ₹249. Download now.
+  > TerraGIS — professional desktop GIS for Windows. Load Shapefiles, GeoTIFF, run spatial analysis, and export maps. Starting at ₹254. Download now.
 - **File:** `src/app/layout.tsx` → `metadata.description`
 
 ### 6. Remove Duplicate Canonical Tags
@@ -180,7 +180,7 @@ GeoPackage — edit vectors, run ...
 TerraGIS — Professional Desktop GIS Software for Windows | Dupahar
 https://terragis.co.in
 TerraGIS — professional desktop GIS for Windows. Load Shapefiles,
-GeoTIFF, run spatial analysis, and export maps. Starting at ₹249.
+GeoTIFF, run spatial analysis, and export maps. Starting at ₹254.
 ```
 
 ---
