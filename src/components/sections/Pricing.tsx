@@ -7,7 +7,7 @@ import { Check } from 'lucide-react';
 const plans = [
   {
     name: 'Community',
-    price: '₹254',
+    price: '₹269',
     priceUnit: '/ $3',
     subtext: 'One-time purchase for hobbyists',
     features: [

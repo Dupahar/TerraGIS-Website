@@ -32,7 +32,7 @@ const heroWords = ['Map.', 'Analyze.', 'Export.'];
 const stats = [
   { icon: <HardDrive size={16} />, label: '224 MB', sub: 'Lightweight' },
   { icon: <Monitor size={16} />, label: 'Windows 10 / 11', sub: 'Native' },
-  { icon: <Zap size={16} />, label: '₹254 / $3', sub: 'One-time' },
+  { icon: <Zap size={16} />, label: '₹269 / $3', sub: 'One-time' },
 ];
 
 export default function Hero() {
