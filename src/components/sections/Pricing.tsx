@@ -8,7 +8,7 @@ const plans = [
   {
     name: 'Community',
     price: '₹269',
-    priceUnit: '/ $3',
+    priceUnit: '$3 one-time',
     subtext: 'One-time purchase for hobbyists',
     features: [
       'Core vector + raster tools',
@@ -27,7 +27,7 @@ const plans = [
   {
     name: 'Professional',
     price: '₹40,000',
-    priceUnit: '/ $480 annual',
+    priceUnit: '$480 annual',
     subtext: 'Per user, billed annually',
     features: [
       'Everything in Community',
@@ -48,7 +48,7 @@ const plans = [
   {
     name: 'Enterprise',
     price: '₹1,60,000+',
-    priceUnit: '/ $1,900+',
+    priceUnit: '$1,900+',
     subtext: 'Custom team licensing',
     features: [
       'Everything in Professional',
@@ -155,13 +155,14 @@ export default function Pricing() {
                 </h3>
 
                 {/* Price */}
-                <div style={{ marginBottom: '4px' }}>
+                <div style={{ marginBottom: '4px', display: 'flex', flexDirection: 'column' }}>
                   <span
                     style={{
                       fontFamily: 'var(--font-space-grotesk)',
                       fontSize: '40px',
                       fontWeight: 700,
                       color: plan.highlight ? 'var(--cyan)' : 'var(--text-primary)',
+                      lineHeight: '1.2',
                     }}
                   >
                     {plan.price}
@@ -171,7 +172,7 @@ export default function Pricing() {
                       style={{
                         fontSize: '16px',
                         color: 'var(--text-secondary)',
-                        marginLeft: '4px',
+                        marginTop: '2px',
                       }}
                     >
                       {plan.priceUnit}
