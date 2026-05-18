@@ -27,7 +27,7 @@ const plans = [
   {
     name: 'Professional',
     price: '₹40,000',
-    priceUnit: '/ annual',
+    priceUnit: '/ $480 annual',
     subtext: 'Per user, billed annually',
     features: [
       'Everything in Community',
@@ -48,6 +48,7 @@ const plans = [
   {
     name: 'Enterprise',
     price: '₹1,60,000+',
+    priceUnit: '/ $1,900+',
     subtext: 'Custom team licensing',
     features: [
       'Everything in Professional',

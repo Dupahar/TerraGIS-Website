@@ -134,7 +134,7 @@ const jsonLd = {
           "name": "Professional",
           "price": "40000",
           "priceCurrency": "INR",
-          "description": "Per user, billed annually. TerraAI segmentation, priority support, advanced spatial analysis.",
+          "description": "Per user, billed annually (approx. $480). TerraAI segmentation, priority support, advanced spatial analysis.",
           "availability": "https://schema.org/PreOrder",
         },
       ],
@@ -221,7 +221,7 @@ const jsonLd = {
           "name": "How much does TerraGIS cost?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "TerraGIS Community edition starts at ₹269 (approximately $3) as a one-time purchase. Professional edition is ₹40,000/year. Enterprise licensing is available for teams.",
+            "text": "TerraGIS Community edition starts at ₹269 (approximately $3) as a one-time purchase. Professional edition is ₹40,000 (approximately $480) per year. Enterprise licensing is available for teams starting at ₹1,60,000 ($1,900+).",
           },
         },
         {
