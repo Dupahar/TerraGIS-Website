@@ -1,0 +1,57 @@
+# TerraGIS
+
+> TerraGIS is a modern desktop GIS (Geographic Information System) application for Windows, built by Dupahar. It is designed for professional spatial workflows including vector editing, raster analysis, cadastral mapping, drone survey processing, and AI-assisted geospatial analysis.
+
+## Product Overview
+
+- **Name**: TerraGIS
+- **Developer**: Dupahar
+- **Platform**: Windows 10 (v17763.0+) and Windows 11
+- **Category**: Desktop GIS / Geospatial Software
+- **Website**: https://terragis.co.in
+- **Download**: https://apps.microsoft.com/detail/9P1ZS0X4NF5Q
+
+## Key Features
+
+- **Vector Editing**: Digitize polygons, polylines, and points. Full vertex editing with snapping.
+- **Raster Support**: Load and visualize GeoTIFF files with band rendering controls.
+- **File Formats**: Shapefile (.shp), GeoTIFF (.tif), GeoPackage (.gpkg), GeoJSON (.geojson)
+- **Spatial Analysis**: Buffer, Clip, Intersect, Union geoprocessing tools
+- **Basemaps**: WMS/WMTS streaming basemaps including satellite and terrain imagery
+- **Map Export**: Publication-ready map layouts exported as PDF or PNG
+- **Layer Management**: Layer ordering, visibility toggling, and style configuration
+- **TerraAI** (Professional): AI-powered segmentation for land cover classification
+- **Coordinate Systems**: Full CRS support with on-the-fly reprojection
+
+## Target Users
+
+- Land surveyors
+- EIA (Environmental Impact Assessment) consultants
+- Drone survey and photogrammetry teams
+- Urban planners and municipal GIS departments
+- Academic researchers in geography and environmental science
+- GIS professionals in India
+
+## Pricing
+
+- **Community**: ₹269 one-time (approx. $3) — Core vector + raster tools, Shapefile/GeoPackage/GeoJSON support
+- **Professional**: ₹40,000/year (approx. $480) — TerraAI segmentation, priority support, advanced spatial analysis
+- **Enterprise**: Custom pricing — Volume licensing, dedicated support, custom integrations
+
+## Comparison
+
+TerraGIS is positioned as a modern, lightweight alternative to ArcGIS and QGIS for Windows users who need professional GIS capabilities without heavy infrastructure or complex licensing.
+
+## Pages
+
+- Home: https://terragis.co.in/
+- About: https://terragis.co.in/about
+- Documentation: https://terragis.co.in/docs
+- Changelog: https://terragis.co.in/changelog
+
+## Contact
+
+- Location: Jammu, India
+- Website: https://terragis.co.in
+- GitHub: https://github.com/Dupahar
+- LinkedIn: https://www.linkedin.com/in/adil-mahajan0220/

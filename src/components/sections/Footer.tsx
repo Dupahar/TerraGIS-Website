@@ -26,8 +26,8 @@ const productLinks = [
 const companyLinks = [
   { label: 'About', href: '/about' },
   { label: 'Email Us', href: 'mailto:mahajanadil0220@gmail.com' },
-  { label: 'Call: +91 8492989575', href: 'tel:+918492989575' },
-  { label: 'Privacy Policy', href: 'https://dupahar.github.io/TerraGIS/' },
+  { label: 'Call Us', href: 'tel:+918492989575' },
+  { label: 'Privacy Policy', href: '/#contact' },
 ];
 
 const resourceLinks = [

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://terragis.co.in/sitemap.xml

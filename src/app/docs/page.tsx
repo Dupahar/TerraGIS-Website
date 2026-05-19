@@ -5,8 +5,11 @@ import { Metadata } from 'next';
 import { BookOpen, Compass, Layers, Zap } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Documentation | TerraGIS',
-  description: 'Learn how to use TerraGIS, from getting started to advanced spatial analysis.',
+  title: 'Documentation | TerraGIS — Guides for Desktop GIS on Windows',
+  description: 'Learn how to use TerraGIS for vector editing, raster analysis, spatial geoprocessing, and map export. Step-by-step guides for GIS professionals on Windows.',
+  alternates: {
+    canonical: 'https://terragis.co.in/docs',
+  },
 };
 
 export default function DocsPage() {
@@ -49,7 +52,7 @@ export default function DocsPage() {
 
           <div className="bento-grid" style={{ marginBottom: '64px' }}>
             {categories.map((cat, i) => (
-              <a key={i} href="#" className="glass-card bento-large" style={{ padding: '32px', display: 'flex', flexDirection: 'column', alignItems: 'flex-start', textDecoration: 'none' }}>
+              <a key={i} href="/docs" className="glass-card bento-large" style={{ padding: '32px', display: 'flex', flexDirection: 'column', alignItems: 'flex-start', textDecoration: 'none' }}>
                 {cat.icon}
                 <h3 style={{ fontFamily: 'var(--font-space-grotesk)', fontSize: '20px', color: 'var(--text-primary)', marginBottom: '12px', fontWeight: 600 }}>{cat.title}</h3>
                 <p style={{ fontSize: '15px', color: 'var(--text-secondary)', lineHeight: 1.6 }}>

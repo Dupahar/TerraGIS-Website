@@ -4,8 +4,11 @@ import TopoDivider from '@/components/ui/TopoDivider';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'About TerraGIS | Dupahar',
-  description: 'Our mission to build professional desktop GIS software for India\'s spatial workforce.',
+  title: 'About TerraGIS | Dupahar — Our Mission to Democratize GIS in India',
+  description: 'Learn about Dupahar and our mission to build professional, affordable desktop GIS software for India\'s land surveyors, EIA consultants, and spatial professionals.',
+  alternates: {
+    canonical: 'https://terragis.co.in/about',
+  },
 };
 
 export default function AboutPage() {

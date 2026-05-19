@@ -18,19 +18,7 @@ export default function Home() {
         <Nav />
       </header>
       <main role="main" itemScope itemType="https://schema.org/WebPage">
-        <h1
-          style={{
-            position: 'absolute',
-            width: '1px',
-            height: '1px',
-            padding: 0,
-            margin: '-1px',
-            overflow: 'hidden',
-            clip: 'rect(0, 0, 0, 0)',
-            whiteSpace: 'nowrap',
-            borderWidth: 0,
-          }}
-        >
+        <h1 className="sr-only">
           TerraGIS — Professional Desktop GIS Software for Windows by Dupahar
         </h1>
         <Hero />

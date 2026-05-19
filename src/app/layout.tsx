@@ -23,9 +23,9 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://terragis.co.in"),
-  title: "TerraGIS | Dupahar",
+  title: "TerraGIS — Professional Desktop GIS Software for Windows | Dupahar",
   description:
-    "TerraGIS is a modern desktop GIS application for professional spatial workflows on Windows. Load Shapefiles, GeoTIFF, GeoPackage — edit vectors, run spatial analysis, digitize features, and export publication-ready maps. Built for land surveyors, EIA consultants, drone survey teams, and GIS professionals in India.",
+    "TerraGIS is a modern desktop GIS for Windows. Load Shapefiles, GeoTIFF & GeoPackage — edit vectors, run spatial analysis, and export publication-ready maps.",
   keywords: [
     "GIS software",
     "GIS software for Windows",
@@ -77,9 +77,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "TerraGIS | Dupahar",
+    title: "TerraGIS — Professional Desktop GIS Software for Windows | Dupahar",
     description:
-      "Modern desktop GIS application for professional spatial workflows. Vector & raster editing, spatial analysis, AI-assisted mapping, and publication-ready exports. Starting at ₹269.",
+      "Modern desktop GIS for Windows. Vector & raster editing, spatial analysis, AI-assisted mapping, and publication-ready exports. Starting at ₹269.",
     type: "website",
     locale: "en_IN",
     siteName: "TerraGIS by Dupahar",
@@ -95,9 +95,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "TerraGIS | Dupahar",
+    title: "TerraGIS — Professional Desktop GIS Software for Windows | Dupahar",
     description:
-      "Modern desktop GIS application for professional spatial workflows. Vector & raster editing, spatial analysis, AI-assisted mapping.",
+      "Modern desktop GIS for Windows. Vector & raster editing, spatial analysis, AI-assisted mapping, and publication-ready exports.",
     images: ["/dupahar-logo.png"],
   },
   alternates: {
@@ -117,7 +117,7 @@ const jsonLd = {
       "operatingSystem": "Windows 10, Windows 11",
       "description":
         "TerraGIS is a modern desktop GIS application for professional spatial workflows on Windows. It supports core vector and raster workflows, map interaction, editing, export, and AI-assisted analysis integration.",
-      "url": "https://dupahar.github.io/TerraGIS/",
+      "url": "https://terragis.co.in/",
       "downloadUrl": "https://apps.microsoft.com/detail/9P1ZS0X4NF5Q",
       "softwareVersion": "Beta",
       "fileSize": "224MB",
@@ -142,7 +142,7 @@ const jsonLd = {
       "author": {
         "@type": "Organization",
         "name": "Dupahar",
-        "url": "https://github.com/Dupahar",
+        "url": "https://terragis.co.in/",
         "email": "mahajanadil0220@gmail.com",
         "telephone": "+91 8492989575",
         "address": {
@@ -165,16 +165,16 @@ const jsonLd = {
         "Coordinate reference system support",
       ],
       "screenshot": [
-        "https://dupahar.github.io/TerraGIS/screenshot-1.png",
-        "https://dupahar.github.io/TerraGIS/screenshot-2.png",
-        "https://dupahar.github.io/TerraGIS/screenshot-3.png",
+        "https://terragis.co.in/screenshot-1.png",
+        "https://terragis.co.in/screenshot-2.png",
+        "https://terragis.co.in/screenshot-3.png",
       ],
     },
     {
       "@type": "Organization",
       "name": "Dupahar",
-      "url": "https://github.com/Dupahar",
-      "logo": "https://dupahar.github.io/TerraGIS/dupahar-logo.png",
+      "url": "https://terragis.co.in/",
+      "logo": "https://terragis.co.in/dupahar-logo.png",
       "email": "mahajanadil0220@gmail.com",
       "telephone": "+91 8492989575",
       "sameAs": [
@@ -189,9 +189,29 @@ const jsonLd = {
       },
     },
     {
+      "@type": "LocalBusiness",
+      "name": "Dupahar",
+      "description": "Software company building professional desktop GIS tools for spatial professionals in India.",
+      "url": "https://terragis.co.in/",
+      "email": "mahajanadil0220@gmail.com",
+      "telephone": "+91 8492989575",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Jammu",
+        "addressRegion": "Jammu & Kashmir",
+        "addressCountry": "IN",
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "32.7266",
+        "longitude": "74.8570",
+      },
+      "priceRange": "₹269 – ₹1,60,000",
+    },
+    {
       "@type": "WebSite",
       "name": "TerraGIS",
-      "url": "https://dupahar.github.io/TerraGIS/",
+      "url": "https://terragis.co.in/",
       "description": "Official website for TerraGIS — Professional Desktop GIS Software for Windows by Dupahar.",
       "publisher": {
         "@type": "Organization",
@@ -261,7 +281,6 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        <link rel="canonical" href="https://dupahar.github.io/TerraGIS/" />
       </head>
       <body>
         {children}

@@ -4,8 +4,11 @@ import TopoDivider from '@/components/ui/TopoDivider';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Changelog | TerraGIS',
-  description: 'Release notes and recent updates to the TerraGIS software.',
+  title: 'Changelog | TerraGIS — Release Notes & Software Updates',
+  description: 'Stay up to date with the latest TerraGIS releases. See new features, bug fixes, and performance improvements for our desktop GIS software on Windows.',
+  alternates: {
+    canonical: 'https://terragis.co.in/changelog',
+  },
 };
 
 export default function ChangelogPage() {

@@ -8,14 +8,14 @@ const contactMethods = [
   {
     icon: <Mail size={24} />,
     label: 'Email',
-    value: 'mahajanadil0220@gmail.com',
+    value: 'Email Us',
     href: 'mailto:mahajanadil0220@gmail.com',
     description: 'For inquiries, partnerships, and support',
   },
   {
     icon: <Phone size={24} />,
     label: 'Phone',
-    value: '+91 8492989575',
+    value: 'Call Us',
     href: 'tel:+918492989575',
     description: 'Mon – Sat, 10 AM – 6 PM IST',
   },
